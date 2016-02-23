@@ -9,7 +9,7 @@ angular.module('warRoom', ['ui.router'])
     }).state('serverdetail', {
       templateUrl: 'templates/serverdetail.html',
       controller: 'DetailController',
-      url: '/detail'
+      url: '/server/:id'
     }).state('settings', {
       templateUrl: 'templates/settings.html',
       controller: 'SettingsController',

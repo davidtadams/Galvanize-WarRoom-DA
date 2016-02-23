@@ -3,9 +3,13 @@ angular.module('warRoom')
   .controller('DetailController', DetailController)
   .controller('SettingsController', SettingsController)
 
-HomeController.$inject = ['$scope']
-function HomeController($scope) {
-  console.log("Hello from Home Controller")
+HomeController.$inject = ['$scope', 'AllServersService']
+function HomeController($scope, AllServersService) {
+  $scope.servers = []
+  AllServersService.on(function(data) {
+    $scope.servers = data
+    $scope.$digest()
+  })
 }
 
 DetailController.$inject = ['$scope']
