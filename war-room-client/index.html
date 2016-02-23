@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="warRoom">
+  <head>
+    <meta charset="utf-8">
+    <title>Da War Room</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.1.2/foundation.min.css">
+    <link rel="stylesheet" href="stylesheets/css/style.css">
+  </head>
+  <body>
+    <div class="top-bar" id="warRoomMenu">
+      <div class="top-bar-left">
+        <ul class="menu" data-responsive-menu="accordion">
+          <li class="menu-text">Galvanize War Room</li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="/">Overview</a>
+          </li>
+          <li><a href="/#/settings">Settings</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div ui-view>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+    <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script src="app/app.js" charset="utf-8"></script>
+    <script src="app/controllers.js" charset="utf-8"></script>
+    <script src="app/services.js" charset="utf-8"></script>
+  </body>
+</html>
