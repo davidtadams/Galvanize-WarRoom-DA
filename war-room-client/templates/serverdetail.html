@@ -5,7 +5,7 @@
         <p class="lead">{{server.name}}</p>
       </div>
       <div class="card-body">
-        <h6>Average response time 50ms</h6>
+        <h6>Average response time {{server.averageResponseTime * 1000 | number:0}} (ms)</h6>
         <hr>
         <p>Additional Info:</p>
         <ul>
