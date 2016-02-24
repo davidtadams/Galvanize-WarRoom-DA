@@ -40,12 +40,12 @@
   .card .card-footer {
     padding: 1.3rem;
     border-top: 2px solid rgba(160, 160, 160, 0.2); }
-  .card .card-good {
-    background-color: green; }
-  .card .card-warning {
-    background-color: yellow; }
-  .card .card-critical {
-    background-color: red; }
+  .card .good {
+    background-color: #3adb76; }
+  .card .warn {
+    background-color: #ffae00; }
+  .card .critical {
+    background-color: #ec5840; }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**

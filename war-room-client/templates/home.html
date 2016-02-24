@@ -7,7 +7,7 @@
       <div class="card-body">
         <p>Average response time 50ms</p>
       </div>
-      <div class="card-footer card-good">
+      <div class="card-footer" ng-class="{'good':server.responseTime * 1000 <= 50, 'warn':server.responseTime * 1000 > 50 && server.responseTime * 1000 <= 500, 'critical':server.responseTime * 1000 > 500}">
         <p>Response time {{server.responseTime * 1000 | number:0}} (ms)</p>
       </div>
     </div>

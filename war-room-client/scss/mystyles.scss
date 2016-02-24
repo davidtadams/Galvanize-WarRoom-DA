@@ -34,13 +34,13 @@
     padding: 1.3rem;
     border-top: 2px solid rgba(160, 160, 160, 0.2);
   }
-  .card-good {
-    background-color: green;
+  .good {
+    background-color: $success-color;
   }
-  .card-warning {
-    background-color: yellow;
+  .warn {
+    background-color: $warning-color;
   }
-  .card-critical {
-    background-color: red;
+  .critical {
+    background-color: $alert-color;
   }
 }

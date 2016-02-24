@@ -22,7 +22,6 @@ function DetailController($scope, SocketService) {
   SocketService.on(function(data) {
     $scope.server = data
     $scope.$digest()
-    console.log('server time (ms): ', data.responseTime / 1000);
   })
 }
 
