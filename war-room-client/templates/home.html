@@ -7,12 +7,11 @@
       <div class="card-body">
         <h6>Average response time {{server.averageResponseTime * 1000 | number:0}} (ms)</h6>
       </div>
-      <div class="card-footer" ng-class="{'good':server.responseTime * 1000 <= 50, 'warn':server.responseTime * 1000 > 50 && server.responseTime * 1000 <= 500, 'critical':server.responseTime * 1000 > 500}">
+      <div class="card-footer" ng-class="{'good':server.responseTime * 1000 <= settings.warning, 'warn':server.responseTime * 1000 > settings.warning && server.responseTime * 1000 <= settings.critical, 'critical':server.responseTime * 1000 > settings.critical}">
         <p>Response time {{server.responseTime * 1000 | number:0}} (ms)</p>
       </div>
     </div>
   </div>
+  <p>Warning Threshold: {{settings.warning}}</p>
+  <p>Critical Threshold: {{settings.critical}}</p>
 </div>
-<!-- <div class="row column">
-  <a class="button hollow expanded">Load More</a>
-</div> -->

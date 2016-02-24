@@ -1,5 +1,6 @@
 angular.module('warRoom')
   .factory('SocketService', SocketService)
+  .factory('SettingsService', SettingsService)
 
 SocketService.$inject = ['$stateParams']
 function SocketService($stateParams) {
@@ -19,6 +20,17 @@ function SocketService($stateParams) {
           callback(data)
         }
       })
+    }
+  }
+}
+
+function SettingsService() {
+  return {
+    setSettings: function(settings) {
+      localStorage.setItem("settings", JSON.stringify(settings))
+    },
+    getSettings: function() {
+      return localStorage.getItem("settings") ? JSON.parse(localStorage.getItem("settings")) : null
     }
   }
 }

@@ -15,9 +15,11 @@
           <li>Temperature: {{server.temp}}</li>
         </ul>
       </div>
-      <div class="card-footer" ng-class="{'good':server.responseTime * 1000 <= 50, 'warn':server.responseTime * 1000 > 50 && server.responseTime * 1000 <= 500, 'critical':server.responseTime * 1000 > 500}">
+      <div class="card-footer" ng-class="{'good':server.responseTime * 1000 <= settings.warning, 'warn':server.responseTime * 1000 > settings.warning && server.responseTime * 1000 <= settings.critical, 'critical':server.responseTime * 1000 > settings.critical}">
         <p>Response time {{server.responseTime * 1000 | number:0}} (ms)</p>
       </div>
     </div>
+    <p>Warning Threshold: {{settings.warning}}</p>
+    <p>Critical Threshold: {{settings.critical}}</p>
   </div>
 </div>

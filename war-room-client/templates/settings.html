@@ -1,3 +1,29 @@
-<div>
-  Settings View
+<div class="row">
+  <div class="small-6 small-centered columns">
+      <h3>Settings</h3>
+      <p>You can manually change the time amounts for the warning and critical thresholds.</p>
+      <div class="row">
+        <div class="small-8 columns">
+          <form ng-submit="editSettings()">
+            <div class="row">
+              <div class="small-8 columns">
+                <label class="text-right middle" for="warning">Warning Threshold (ms)</label>
+              </div>
+              <div class="small-4 columns">
+                <input ng-model="settings.warning" class="text-right" type="number" name="warning" value="{{settings.warning}}" id="warning" min="1" max="5000">
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-8 columns">
+                <label class="text-right middle" for="critical">Critical Threshold (ms)</label>
+              </div>
+              <div class="small-4 columns">
+                <input ng-model="settings.critical" class="text-right" type="number" name="critical" value="{{settings.critical}}" id="critical" min="1" max="5000">
+              </div>
+            </div>
+            <button type="submit" class="expanded button" name="button">Submit Changes</button>
+          </form>
+        </div>
+      </div>
+  </div>
 </div>
