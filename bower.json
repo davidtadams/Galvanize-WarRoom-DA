@@ -1,0 +1,23 @@
+{
+  "name": "warRoom",
+  "version": "1.0.0",
+  "authors": [
+    "David Adams <adams.t.david@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "foundation-sites": "~6.1.2",
+    "motion-ui": "~1.1.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true
+}

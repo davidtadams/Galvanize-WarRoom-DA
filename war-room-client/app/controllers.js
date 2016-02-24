@@ -16,12 +16,13 @@ function HomeController($scope, $state, SocketService) {
   }
 }
 
-DetailController.$inject = ['$scope', '$state', 'SocketService']
-function DetailController($scope, $state, SocketService) {
+DetailController.$inject = ['$scope', 'SocketService']
+function DetailController($scope, SocketService) {
   $scope.server = null
   SocketService.on(function(data) {
     $scope.server = data
     $scope.$digest()
+    console.log('server time (ms): ', data.responseTime / 1000);
   })
 }
 
