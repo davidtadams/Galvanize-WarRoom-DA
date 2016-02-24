@@ -3,18 +3,26 @@ angular.module('warRoom')
   .controller('DetailController', DetailController)
   .controller('SettingsController', SettingsController)
 
-HomeController.$inject = ['$scope', 'AllServersService']
-function HomeController($scope, AllServersService) {
+HomeController.$inject = ['$scope', '$state', 'SocketService']
+function HomeController($scope, $state, SocketService) {
   $scope.servers = []
-  AllServersService.on(function(data) {
+  SocketService.on(function(data) {
     $scope.servers = data
     $scope.$digest()
   })
+
+  $scope.showServer = function(id) {
+    $state.go('serverdetail', {id: id})
+  }
 }
 
-DetailController.$inject = ['$scope']
-function DetailController($scope) {
-  console.log("Hello from Detail Controller")
+DetailController.$inject = ['$scope', '$state', 'SocketService']
+function DetailController($scope, $state, SocketService) {
+  $scope.server = null
+  SocketService.on(function(data) {
+    $scope.server = data
+    $scope.$digest()
+  })
 }
 
 SettingsController.$inject = ['$scope']

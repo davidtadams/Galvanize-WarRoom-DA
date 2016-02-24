@@ -1,17 +1,24 @@
 angular.module('warRoom')
-  .factory('AllServersService', AllServersService)
+  .factory('SocketService', SocketService)
 
-function AllServersService() {
+SocketService.$inject = ['$stateParams']
+function SocketService($stateParams) {
   var socket = io()
-  var callbacks = []
-  socket.on('data', function(data) {
-    callbacks.forEach(function (callback) {
-      callback(data)
-    })
-  })
   return {
     on: function(callback) {
-      callbacks.push(callback)
+      socket.on('data', function(data) {
+        if ($stateParams.id) {
+          var singleServer = null
+          data.forEach(function(server) {
+            if ($stateParams.id == server.id) {
+              singleServer = server
+            }
+          })
+          callback(singleServer)
+        } else {
+          callback(data)
+        }
+      })
     }
   }
 }
